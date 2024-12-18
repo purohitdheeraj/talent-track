@@ -1,13 +1,12 @@
 'use client';
-import React, { useState, KeyboardEvent, ChangeEvent, useRef, useEffect } from "react";
-import { Input } from "./ui/input";
+import React, { useState, ChangeEvent, useRef, useEffect } from "react";
 import { Textarea } from "./ui/textarea";
 import { ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 import classNames from "classnames";
 
 type FilterInputProps = {
-  onSubmit: (filter: string) => void;
+  onSubmit: (message: string) => Promise<void>;
 }
 
 const FilterInput:React.FC<FilterInputProps> = ({onSubmit}) => {
@@ -40,11 +39,11 @@ const FilterInput:React.FC<FilterInputProps> = ({onSubmit}) => {
   const handleKeyPress = (evt: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (evt.key === "Enter" && !evt.shiftKey) {
       evt.preventDefault();
-      onSubmit(input)
+      onSubmit(input);
       setInput("");
     }
   };
-
+  
   const handleSend = () => {
     onSubmit(input);
     setInput("");
