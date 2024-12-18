@@ -1,9 +1,25 @@
-import Image from "next/image";
+import CandidateResults from "@/components/CandidateResults";
+import ChatSidebar from "@/components/ChatSidebar";
+import FilterInput from "@/components/FilterInput";
+import ShortlistSidebar from "@/components/ShortlistSidebar";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    Hare Krishna
+    <>
+       <div className="flex h-screen flex-wrap">
+      <ChatSidebar />
+      <div className="flex-1 flex flex-col">
+        <CandidateResults />
+        <div className="mt-auto mb-10">
+        <FilterInput />
+          <small className="text-gray-400 text-center mt-4 mx-auto block">
+
+        {Math.random() > 0.5 ? "Type your search prompt above to filter candidates." : "The only way to do great work is to love what you do. – Steve Jobs"}
+          </small>
+        </div>
+      </div>
+      <ShortlistSidebar />
     </div>
+    </>
   );
 }
