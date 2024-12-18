@@ -17,7 +17,7 @@ const ChatSidebar: React.FC = () => {
   const chats = useChatStore((state) => state.chats);
 
   return (
-    <aside className="w-1/5 bg-blue-100 p-4">
+    <aside className="w-1/5 bg-gray-00  p-4">
       <h3 className="text-gray-1k">Chat History</h3>
       <ul>
         {chats.map((chat, idx) => (

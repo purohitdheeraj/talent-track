@@ -59,7 +59,7 @@ const FilterInput:React.FC<FilterInputProps> = ({onSubmit}) => {
         onChange={handleChange}
         onKeyDown={handleKeyPress}
         rows={1}
-        placeholder="Type your filter query..."
+        placeholder="start typing..."
         className="flex-grow  min-h-10 text-2xl outline-none shadow-none h-auto resize-none bg-white overflow-hidden"
       />
         <Button
@@ -67,6 +67,7 @@ const FilterInput:React.FC<FilterInputProps> = ({onSubmit}) => {
           aria-label="Submit text"
           disabled={!input.trim()}
           onClick={handleSend}
+          className="bg-gray-1k border-gray-400 hover:bg-gray-1k/90 hover:border-gray-400 text-white rounded-full"
         >
           <ArrowUp
             height={16}

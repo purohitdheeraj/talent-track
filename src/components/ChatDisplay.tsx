@@ -16,23 +16,17 @@ const ChatDisplay: React.FC<ChatDisplayProps> = ({ messages }) => {
 
 
   return (
-    <div className="flex flex-col gap-4 p-4 ">
+    <div className="flex flex-col gap-4 p-4 text-gray-1k">
       {messages.map((msg, index) => (
         <div
           key={index}
-          className={`${
-            msg.role === "user"
-              ? "text-right"
-              : msg.role === "system"
-              ? "text-center text-gray-500"
-              : "text-left"
-          }`}
+          className={`${msg.role === 'user' ? 'justify-end' : 'justify-start'} flex`}          
         >
           <p
             className={`inline-block ${
               msg.role === "user"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-900"
+                ? "bg-gray-300 text-gray-1k"
+                : "bg-gray-100"
             } rounded-lg p-3 max-w-[70%]`}
           >
             {msg.content}

@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="flex h-screen">
       <ChatSidebar />
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col border-x">
         <Chat />
         {/* <CandidateResults filters={filters} /> */}
         <div className="mb-6">

@@ -20,8 +20,8 @@ const ShortlistSidebar: React.FC = () => {
   const shortlist = useShortlistStore((state) => state.shortlist);
 
   return (
-    <aside className="w-1/5 bg-gray-200 p-4">
-      <h3 className="font-bold">Shortlisted</h3>
+    <aside className="w-1/5 bg-gray-00 p-4">
+      <h3 className="">Shortlisted</h3>
       <ul>
         {shortlist.map((candidate, idx) => (
           <li key={idx}>{candidate.name}</li>

@@ -21,7 +21,7 @@ const Chat: React.FC = () => {
 
 
   return (
-    <div ref={chatContainerRef} className="flex scroll-smooth flex-col h-full flex-1 overflow-y-auto border-b">
+    <div ref={chatContainerRef} className="flex scroll-smooth flex-col h-full flex-1 no-scrollbar overflow-y-auto border-b">
       <ChatDisplay messages={messages} />
     </div>
   );
