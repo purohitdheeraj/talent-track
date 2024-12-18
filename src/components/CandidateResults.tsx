@@ -13,7 +13,7 @@ interface CandidateResultsProps {
 }
 
 const CandidateCard: React.FC<{ candidate: Candidate }> = ({ candidate }) => (
-  <div className="border p-4 m-2">
+  <div className="border p-4 m-2 rounded shadow-sm hover:shadow-lg">
     <h3>{candidate.name}</h3>
     <p>Skills: {candidate.skills.join(", ")}</p>
     <Button size={"sm"} className="bg-green-500 text-white p-2">

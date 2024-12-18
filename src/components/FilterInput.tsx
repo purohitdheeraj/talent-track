@@ -1,12 +1,16 @@
 'use client';
-import { useState, KeyboardEvent, ChangeEvent, useRef, useEffect } from "react";
+import React, { useState, KeyboardEvent, ChangeEvent, useRef, useEffect } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 import classNames from "classnames";
 
-const FilterInput = ({onSubmit}) => {
+type FilterInputProps = {
+  onSubmit: (filter: string) => void;
+}
+
+const FilterInput:React.FC<FilterInputProps> = ({onSubmit}) => {
   const [input, setInput] = useState<string>('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
