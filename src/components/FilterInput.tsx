@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 import classNames from "classnames";
 
-const FilterInput = () => {
+const FilterInput = ({onSubmit}) => {
   const [input, setInput] = useState<string>('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -28,9 +28,6 @@ const FilterInput = () => {
   }, [input]);
 
 
-  const handleSend = () => {
-    console.log(input);
-  };
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
@@ -39,9 +36,15 @@ const FilterInput = () => {
   const handleKeyPress = (evt: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (evt.key === "Enter" && !evt.shiftKey) {
       evt.preventDefault();
-      handleSend();
+      onSubmit(input)
+      setInput("");
     }
   };
+
+  const handleSend = () => {
+    onSubmit(input);
+    setInput("");
+  }
 
   return (
     <div   className={classNames(
